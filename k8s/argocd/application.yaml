@@ -18,7 +18,7 @@ spec:
   # Source of the application manifests
   source:
     repoURL: https://github.com/ganislp/integration-mysql-db.git
-    targetRevision: MASTER
+    targetRevision: HEAD
     path: k8/argocd
     
 

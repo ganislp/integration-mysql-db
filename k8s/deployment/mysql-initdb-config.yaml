@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-initdb-config
+  namespace: finance-db
+data:  # store initial SQL commands
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS finance_db;
+    USE finance_db;
+    CREATE TABLE finance_process_step(
+    `finance_process_id` int NOT NULL AUTO_INCREMENT,
+    `step_type` varchar(45) DEFAULT NULL,
+    `queue_name` varchar(45) DEFAULT NULL,
+    `message_response` blob NOT NULL,
+     `response_date_time` datetime NOT NULL,
+    `step_status` varchar(45) DEFAULT NULL,
+    `host_name` varchar(45) DEFAULT NULL,
+    ) ENGINE=InnoDB;
